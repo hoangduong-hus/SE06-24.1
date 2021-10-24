@@ -8,7 +8,7 @@ Smart contract là các chương trình máy tính được lưu trữ và thự
 
 ### Solidity là gì?
 
-Solidity là ngôn ngữ lập trình bậc cao (high-level programming language) được phát triển bởi [Ethereum Foundation](https://ethereum.org/) nhằm mục địch phát triển các smart contract.
+Solidity là ngôn ngữ lập trình bậc cao (high-level programming language) được phát triển bởi [Ethereum Foundation](https://ethereum.org/) nhằm mục đích phát triển các smart contract.
 
 ### Lập trình Solidity
 
