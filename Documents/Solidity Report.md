@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tìm hiểu về Solidity
 
 ## Mở đầu
@@ -275,7 +274,6 @@ _ValueType có thể là bất kỳ kiểu nào bao gồm cả ánh xạ.
   }
   ```
   
-=======
 ### Function
 
 - #### Cấu trúc hàm
@@ -563,4 +561,3 @@ interface Token {
     function transfer(address recipient, uint amount);
 }
 ```
->>>>>>> huy
