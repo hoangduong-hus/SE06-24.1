@@ -66,33 +66,25 @@ export function HomeWrapper({ account, instaDapp }) {
 
   function setupPostCreatedListener() {
     instaDapp.events.Posted({}, (contractEvent) => {
-      const { ipfsHash, caption, id, user } = contractEvent.returnValues
-      setPosts((previousState) => [
-        { ipfsHash, caption, id, user },
-        ...previousState,
-      ])
-    })
+      const { ipfsHash, caption, id, user } = contractEvent.returnValues;
+      setPosts(previousState => [{ ipfsHash, caption, id, user }, ...previousState]);
+    });
   }
 
   function onChange(event) {
-    const target = event.target
-    const isFileInput = target.files !== undefined
-    const newValue = isFileInput ? target.files[0] : target.value
-    setPostForm((previousState) => ({
-      ...previousState,
-      [target.name]: newValue,
-    }))
+    const target = event.target;
+    const isFileInput = target.files !== undefined;
+    const newValue = isFileInput ? target.files[0] : target.value;
+    setPostForm(previousState => ({...previousState, [target.name]: newValue}));
   }
 
   async function onSubmit(event) {
-    event.preventDefault()
-    const file = postForm["post-image"]
-    const caption = postForm["post-caption-input"]
-    const added = await client.add(file)
-    await instaDapp.methods
-      .createPost(added.path, caption)
-      .send({ from: account })
-    window.location.reload(false)
+    event.preventDefault();
+    const file = postForm['post-image'];
+    const caption = postForm['post-caption-input'];
+    const added = await client.add(file);
+    await instaDapp.methods.createPost(added.path, caption).send({ from: account });
+    window.location.reload(false);
   }
 
   return (
